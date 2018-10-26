@@ -1,0 +1,22 @@
+{
+  "name": "@evergis/color",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
+    "prepublishOnly": "npm i && npm run build"
+  },
+  "author": "everpoint",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-typescript2": "^0.17.2",
+    "typescript": "^3.1.3"
+  }
+}
