@@ -49,6 +49,8 @@ export class Color {
      */
     toString(format?: string): string {
         if (format === 'hex') {
+            return '#' + decToHex(this.r) + decToHex(this.g) + decToHex(this.b) + decToHex(this.a);
+        } else if (format === 'hex-legacy') {
             return '#' + decToHex(this.a) + decToHex(this.r) + decToHex(this.g) + decToHex(this.b);
         } else if (format === 'rgb') {
             return 'rgb(' + this.r + ',' + this.g + ',' + this.b + ')';
