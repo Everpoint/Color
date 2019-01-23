@@ -3,19 +3,18 @@ import { Color } from "./Color";
 export type ColorScaleArgument = [number, string];
 
 export class ColorScale {
-    private palette: ColorScaleArgument[];
 
-    constructor(palette: ColorScaleArgument[]) {
-        this.palette = palette;
-    }
+    constructor(private palette: ColorScaleArgument[]) {}
 
-    getColor(p) {
-        const palette = Object.create(this.palette);
+    getColor(p: number): string {
+        if (p === void 0 || p === null) return;
+
+        const palette: ColorScaleArgument[] = this.palette.slice();
 
         palette[0][0] = 0;
         palette[palette.length - 1][0] = 1;
 
-        let colors = palette.map(item => { return new Color(item[1]); });
+        let colors: Color[] = palette.map(item => { return new Color(item[1]); });
 
         if (p >= 1) {
             let color = new Color(palette[palette.length-1][1]);
@@ -35,5 +34,7 @@ export class ColorScale {
                 return 'rgba(' + channels.join(',') + ')';
             }
         }
+
+        return "";
     };
 }
