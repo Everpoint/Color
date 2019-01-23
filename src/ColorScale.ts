@@ -9,7 +9,7 @@ export class ColorScale {
         this.palette = palette;
     }
 
-    getColor = (p) => {
+    getColor(p) {
         const palette = Object.create(this.palette);
 
         palette[0][0] = 0;
