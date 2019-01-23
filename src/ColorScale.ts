@@ -6,9 +6,7 @@ export class ColorScale {
 
     constructor(private palette: ColorScaleArgument[]) {}
 
-    getColor(p: number): string {
-        if (p === void 0 || p === null) return;
-
+    getColor(p: number): string | null {
         const palette: ColorScaleArgument[] = this.palette.slice();
 
         palette[0][0] = 0;
@@ -35,6 +33,6 @@ export class ColorScale {
             }
         }
 
-        return "";
+        return null;
     };
 }
